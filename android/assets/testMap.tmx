@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="2017.05.16" orientation="orthogonal" renderorder="left-down" width="100" height="100" tilewidth="32" tileheight="32" nextobjectid="37">
- <tileset firstgid="1" source="../../../test.tsx"/>
- <tileset firstgid="49" source="../../../tiles.tsx"/>
+<map version="2017.05.26" orientation="orthogonal" renderorder="left-down" width="100" height="100" tilewidth="32" tileheight="32" nextobjectid="37">
+ <tileset firstgid="1" source="test.tsx"/>
  <tileset firstgid="49" source="tiles.tsx"/>
  <layer name="tileSloy" width="100" height="100">
   <data encoding="csv">

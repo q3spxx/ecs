@@ -1,3 +1,7 @@
+##OTHER
+*.tmx
+.gitignore
+
 ## Java
 
 ##*.class
