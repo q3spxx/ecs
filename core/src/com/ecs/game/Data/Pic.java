@@ -10,10 +10,10 @@ import com.ecs.game.Components.VelocityComponent;
 public class Pic implements GameObject {
     public Entity create () {
         Entity entity = new Entity();
-        entity.add(new PositionComponent(200f, 200f, 128f, 128f));
+        entity.add(new PositionComponent(0f, 0f, 128f, 128f));
         entity.add(new VelocityComponent(0f, 0f));
         entity.add(new ParticlesEmitterComponent("particle.p"));
-//        entity.add(new AnimationComponent(new Texture("testPerson.png")));
+        entity.add(new AnimationComponent(new Texture("badlogic.jpg")));
         return entity;
     }
 }

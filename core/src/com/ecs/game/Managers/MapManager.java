@@ -9,7 +9,9 @@ import com.badlogic.gdx.maps.MapLayer;
 import com.badlogic.gdx.maps.MapLayers;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.MapObjects;
+import com.badlogic.gdx.maps.objects.PolygonMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.math.Polygon;
 import com.ecs.game.Components.CameraComponent;
 import com.ecs.game.Components.MapComponent;
 import com.ecs.game.Components.MapObjectComponent;
@@ -34,15 +36,17 @@ public class MapManager {
         MapObject mapObject;
         for (int i = 0; i < mapObjects.getCount(); i++) {
             mapObject = mapObjects.get(i);
+            PolygonMapObject polyObject = (PolygonMapObject) mapObject;
+            Polygon poly = polyObject.getPolygon();
             Entity entity = new Entity();
             float x = (Float) mapObject.getProperties().get("x");
             float y = (Float) mapObject.getProperties().get("y");
             float w = (Float) mapObject.getProperties().get("width");
             float h = (Float) mapObject.getProperties().get("height");
             entity.add(new PositionComponent(x, y, w, h));
-            entity.add(new MapObjectComponent());
+            entity.add(new MapObjectComponent(poly));
 
-            Main.box2dManager.addBody(x, y, w, h);
+//            Main.box2dManager.addBody(x, y, w, h);
             engine.addEntity(entity);
         }
 //        Main.box2dManager.addPointLight(600, Color.WHITE, 400, 200f, 200f);
